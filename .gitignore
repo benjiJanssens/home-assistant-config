@@ -1,5 +1,10 @@
 .storage/
 
+*.log
+*.log.*
+*.db
+*.db-*
+
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml

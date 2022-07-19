@@ -2,7 +2,7 @@ version: '3'
 services:
   ha:
     container_name: ha
-    image: "ghcr.io/home-assistant/home-assistant:stable"
+    image: "ghcr.io/home-assistant/home-assistant:2022.7.5"
     volumes:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
