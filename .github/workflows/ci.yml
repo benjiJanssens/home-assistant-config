@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate Home Assistant configuration
+    runs-on: ubuntu-latest
+    container: homeassistant/amd64-homeassistant
+    steps:
+      - name: ⤵️ Check out repository
+        uses: actions/checkout@v3
+      - name: 🚀 Run check_config
+        run: hass --script check_config -c ./config
