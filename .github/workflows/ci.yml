@@ -17,7 +17,11 @@ jobs:
         run: hass --script check_config -c ./config
   deploy:
     name: Deploy Home Assistant configuration
+    needs: validate
     runs-on: ubuntu-latest
+    environment: 
+      name: pi
+      url: https://home.benjijanssens.com
     steps:
     - name: 🔒 Execute SSH commands
       uses: appleboy/ssh-action@master
