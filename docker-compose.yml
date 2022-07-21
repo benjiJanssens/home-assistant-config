@@ -17,4 +17,3 @@ services:
       - API_KEY=${CLOUDFLARE_API_TOKEN:?err}
       - ZONE=${DOMAIN:?err}
       - SUBDOMAIN=${SUBDOMAIN:?err}
-      - PROXIED=true
