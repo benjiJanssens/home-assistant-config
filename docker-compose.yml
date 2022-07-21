@@ -9,3 +9,12 @@ services:
     restart: unless-stopped
     privileged: true
     network_mode: host
+  cloudflare-ddns:
+    container_name: cloudflare-ddns
+    image: oznu/cloudflare-ddns:latest
+    restart: unless-stopped	
+    environment:
+      - API_KEY=${CLOUDFLARE_API_TOKEN:?err}
+      - ZONE=${DOMAIN:?err}
+      - SUBDOMAIN=${SUBDOMAIN:?err}
+      - PROXIED=true
