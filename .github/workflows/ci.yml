@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: ⤵️ Check out repository
         uses: actions/checkout@v3
+      - name: 🔒 Mock required files
+        run: |
+          mkdir -p ./config/ssl
+          touch ./config/ssl/certificate.pem
+          touch ./config/ssl/key.pem
       - name: 🚀 Run check_config
         run: hass --script check_config -c ./config
   deploy:

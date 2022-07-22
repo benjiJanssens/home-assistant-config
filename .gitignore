@@ -4,6 +4,7 @@
 *.log.*
 *.db
 *.db-*
+*.pem
 
 ip_bans.yaml
 secrets.yaml
