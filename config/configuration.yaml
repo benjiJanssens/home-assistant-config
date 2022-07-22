@@ -9,3 +9,8 @@ tts:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+http:
+  server_port: 443
+  ssl_certificate: /ssl/certificate.pem
+  ssl_key: /ssl/key.pem
