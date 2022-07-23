@@ -12,5 +12,5 @@ scene: !include scenes.yaml
 
 http:
   server_port: 443
-  ssl_certificate: ./config/ssl/certificate.pem
-  ssl_key: ./config/ssl/key.pem
+  ssl_certificate: ssl/certificate.pem
+  ssl_key: ssl/key.pem

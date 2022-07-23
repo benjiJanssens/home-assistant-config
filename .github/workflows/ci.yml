@@ -10,16 +10,20 @@ jobs:
     name: Validate Home Assistant configuration
     runs-on: ubuntu-latest
     container: homeassistant/amd64-homeassistant
+    env:
+      CONFIG_DIR: config
     steps:
       - name: ⤵️ Check out repository
         uses: actions/checkout@v3
-      - name: 🔒 Mock required files
+      - name: 🔒 Mock SSL certificate and key
+        working-directory: ${{ env.CONFIG_DIR }}
         run: |
-          mkdir -p ./config/ssl
-          touch ./config/ssl/certificate.pem
-          touch ./config/ssl/key.pem
+          mkdir -p ssl
+          touch ssl/certificate.pem
+          touch ssl/key.pem
       - name: 🚀 Run check_config
-        run: hass --script check_config -c ./config
+        working-directory: ${{ env.CONFIG_DIR }}
+        run: hass --script check_config -c .
   deploy:
     name: Deploy Home Assistant configuration
     needs: validate
