@@ -1,7 +1,7 @@
 version: '3'
 services:
-  ha:
-    container_name: ha
+  home-assistant:
+    container_name: home-assistant
     image: "ghcr.io/home-assistant/home-assistant:2022.7.5"
     volumes:
       - ./config:/config
@@ -18,3 +18,14 @@ services:
       - ZONE=${DOMAIN:?err}
       - SUBDOMAIN=${SUBDOMAIN:?err}
       - PROXIED=false
+  nginx-proxy-manager:
+    container_name: nginx-proxy-manager
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ~/nginx-proxy-manager/data:/data
+      - ~/nginx-proxy-manager/letsencrypt:/etc/letsencrypt

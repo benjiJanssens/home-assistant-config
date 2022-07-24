@@ -11,6 +11,6 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 http:
-  server_port: 443
-  ssl_certificate: ssl/certificate.pem
-  ssl_key: ssl/key.pem
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
