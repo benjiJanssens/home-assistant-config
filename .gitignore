@@ -1,4 +1,7 @@
 .storage/
+custom_components/
+image/
+www/
 
 *.log
 *.log.*
