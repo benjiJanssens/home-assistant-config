@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: ⤵️ Check out repository
         uses: actions/checkout@v3
+      - name: 🔒 Mock secrets
+        working-directory: ${{ env.CONFIG_DIR }}
+        run: mv secrets.example.yaml secrets.yaml
       - name: 🚀 Run check_config
         working-directory: ${{ env.CONFIG_DIR }}
         run: hass --script check_config -c .
