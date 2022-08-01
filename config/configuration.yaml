@@ -10,6 +10,16 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+homeassistant:
+  name: Thuis
+  latitude: !secret homeassistant_latitude
+  latitude: !secret homeassistant_longitude
+  unit_system: metric
+  currency: EUR
+  time_zone: "Europe/Brussels"
+  external_url: !secret homeassistant_external_url
+  internal_url: !secret homeassistant_internal_url
+
 http:
   use_x_forwarded_for: true
   trusted_proxies: 172.0.0.0/24

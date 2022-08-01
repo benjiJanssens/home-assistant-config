@@ -24,7 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: pi
-      url: https://home.benjijanssens.com
     steps:
     - name: 🔒 Execute SSH commands
       uses: appleboy/ssh-action@master
