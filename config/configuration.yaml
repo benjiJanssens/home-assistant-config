@@ -13,7 +13,7 @@ scene: !include scenes.yaml
 homeassistant:
   name: Thuis
   latitude: !secret homeassistant_latitude
-  latitude: !secret homeassistant_longitude
+  longitude: !secret homeassistant_longitude
   unit_system: metric
   currency: EUR
   time_zone: "Europe/Brussels"
